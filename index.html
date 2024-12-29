@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>UD 4 - Ejercicio 2</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+
+  // Función mostrarEnVisor()
+    function mostrarEnVisor(){
+  
+      let imagenCentral = document.querySelector('figure img');
+      imagenCentral.src = this.getAttribute('src');
+      imagenCentral.alt = this.alt;   
+      
+      let figCaption = document.querySelector('figure figcaption');
+      figCaption.innerHTML = this.alt;
+    }
+
+  
+  // Función main()
+  function main()
+  {
+    const imagen = document.querySelectorAll('#parte_lateral > img');
+
+    for (let img of imagen)
+      {
+        img.onclick = mostrarEnVisor;
+      }
+    
+  }
+  // Tras cargarse la página, llamar a main()
+  window.onload = main;
+
+</script>
+</head>
+<body>
+<div class="row">
+  <h1>Visor de imágenes</h1>
+  <aside id="parte_lateral">
+    <img src="../ud4ej2/img/fondo1.jpg" alt="Descripción Imagen 1">
+    <img src="../ud4ej2/img/fondo2.jpg" alt="Descripción Imagen 2">
+    <img src="../ud4ej2/img/fondo3.jpg" alt="Descripción Imagen 3">
+    <img src="../ud4ej2/img/fondo4.jpg" alt="Descripción Imagen 4">
+
+  </aside>
+  <section id="parte_central">
+    <figure>
+      <img src="img/fondo1.jpg" alt="Descripción Imagen 1">
+      <figcaption></figcaption>
+    </figure>
+  </section>
+</div>
+</body>
+</html>
